@@ -1,19 +1,24 @@
-import Passions from "./Passions";
+import React from "react";
 import "./App.css";
-import Career from "./career";
-import About from "./About";
+import Home from "./Home";
+import Technology from "./Technology";
+import {BrowserRouter,Link,Routes, Route} from 'react-router-dom';
 
 
 export default function App() {
   return (
     <div className="App">
-     <h1 className="head">Welcome to my Blog</h1>
-     <About />
-     <Passions />
-     <Career />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={ <Home />}></Route>
+        <Route path='/technology' element={ <Technology />}></Route>
+        <Route path='/sports' element={ <Technology />}></Route>
+        <Route path='/gardening' element={ <Technology />}></Route>
+      </Routes>
+    </BrowserRouter>
     </div>
-
   );
 }
+
 
 
